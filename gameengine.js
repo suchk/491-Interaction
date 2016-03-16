@@ -77,10 +77,12 @@ GameEngine.prototype.startInput = function () {
     
     this.ctx.canvas.addEventListener("mouseup", function (e) {
         that.mouseUp = getXandY(e);
+        e.preventDefault();
     }, false);
     
     this.ctx.canvas.addEventListener("mousedown", function (e) {
         that.mouseDown = getXandY(e);
+        e.preventDefault();
     }, false);
 
     this.ctx.canvas.addEventListener("click", function (e) {
