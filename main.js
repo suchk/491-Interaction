@@ -36,7 +36,7 @@ ASSET_MANAGER.downloadAll(function () {
     gameEngine.start();
 });
 
-var socket = io.connect("http://76.28.150.193:8888");
+//var socket = io.connect("http://76.28.150.193:8888");
 
 var loadData = function () {
     socket.emit("load", {studentname: "Such Kamal", statename: "SimulationData"});
@@ -63,18 +63,18 @@ var saveData = function () {
 };
 
 
-socket.on("load", function (data) {
-    console.log("Loading...");
+//socket.on("load", function (data) {
+//     console.log("Loading...");
 
-    gameEngine.entities = [];
-    gameEngine.circles = [];
+//     gameEngine.entities = [];
+//     gameEngine.circles = [];
 
-    // Recreate each boid given the save data
-    for (var i = 0; i < data.data.length; i++) {
-        var circle = new Circle(gameEngine, data.data[i].x, data.data[i].y, data.data[i].velocity);
-        circle.mass = data.data[i].mass;
-        circle.color = data.data[i].color;
-        circle.radius = data.data[i].radius;
-        gameEngine.addEntity(circle);
-    }
-});
+//     // Recreate each boid given the save data
+//     for (var i = 0; i < data.data.length; i++) {
+//         var circle = new Circle(gameEngine, data.data[i].x, data.data[i].y, data.data[i].velocity);
+//         circle.mass = data.data[i].mass;
+//         circle.color = data.data[i].color;
+//         circle.radius = data.data[i].radius;
+//         gameEngine.addEntity(circle);
+//     }
+// });
